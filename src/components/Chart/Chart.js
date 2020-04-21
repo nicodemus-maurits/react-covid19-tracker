@@ -12,7 +12,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
       setDailyData(await fetchDailyData());
     };
     asyncFetchDailyData();
-  }, [country]);
+  }, []);
 
   const lineChart = dailyData.length ? (
     <Line

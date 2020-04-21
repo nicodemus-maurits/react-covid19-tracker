@@ -9,8 +9,7 @@ const CountryPicker = ({ handleCountryChange }) => {
 
   useEffect(() => {
     const asyncFetchCountries = async () => {
-      const fetchedCountries = await fetchCountries();
-      setCountries(fetchedCountries);
+      setCountries(await fetchCountries());
     };
     asyncFetchCountries();
   }, [setCountries]);
@@ -27,7 +26,7 @@ const CountryPicker = ({ handleCountryChange }) => {
         defaultValue=''
         onChange={(e) => handleCountryChange(e.target.value)}
       >
-        <option value='global'>Global</option>
+        <option value=''>Global</option>
         {countryOptions}
       </NativeSelect>
     </FormControl>
